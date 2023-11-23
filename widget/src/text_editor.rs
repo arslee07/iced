@@ -98,9 +98,36 @@ where
         self
     }
 
+    /// Sets the text size of the [`TextEditor`].
+    pub fn text_size(mut self, text_size: impl Into<Pixels>) -> Self {
+        self.text_size = Some(text_size.into());
+        self
+    }
+
+    /// Sets the [`LineHeight`] of the [`TextEditor`].
+    pub fn line_height(mut self, line_height: impl Into<LineHeight>) -> Self {
+        self.line_height = line_height.into();
+        self
+    }
+
+    /// Sets the height of the [`TextEditor`].
+    pub fn height(mut self, height: impl Into<Length>) -> Self {
+        self.height = height.into();
+        self
+    }
+
     /// Sets the [`Padding`] of the [`TextEditor`].
     pub fn padding(mut self, padding: impl Into<Padding>) -> Self {
         self.padding = padding.into();
+        self
+    }
+
+    /// Sets the style of the [`TextEditor`].
+    pub fn style(
+        mut self,
+        style: impl Into<<Renderer::Theme as StyleSheet>::Style>,
+    ) -> Self {
+        self.style = style.into();
         self
     }
 
